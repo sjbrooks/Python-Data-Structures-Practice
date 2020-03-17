@@ -1,4 +1,4 @@
-ef list_manipulation(lst, command, location, value=None):
+def list_manipulation(lst, command, location, value=None):
     """Mutate lst to add/remove from beginning or end.
 
     - lst: list of values
@@ -40,3 +40,32 @@ ef list_manipulation(lst, command, location, value=None):
         >>> list_manipulation(lst, 'add', 'dunno') is None
         True
     """
+
+    # Originally, I didn't realize that this would return None without this
+    # It does so because it will never pass either of the conditionals,
+    # which means it will never get explicitly returned, and
+    # Functions that don’t explicitly return return None
+
+    # if ((command != 'add' and command != 'remove') or
+    #    (location != 'beginning' and location != 'end')):
+    #     return None
+
+    if command == 'add':
+        if location == 'beginning':
+            lst.insert(0, value)
+            return lst
+        else:
+            lst.append(value)
+            return lst
+    elif command == 'remove':
+        if location == 'beginning':
+            return lst.pop(0)
+        else:
+            return lst.pop()
+
+
+lst = [1, 2, 3]
+print(list_manipulation(lst, 'remove', 'beginning'))
+print(list_manipulation(lst, 'add', 'end', 30))
+print(list_manipulation(lst, 'remove', 'end'))
+print(list_manipulation(lst, 'add', 'beginning', 20))
