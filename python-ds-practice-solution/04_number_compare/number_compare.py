@@ -11,12 +11,9 @@ def number_compare(a, b):
         'First is greater'
     """
 
-    if a == b:
-        return 'Numbers are equal'
-    elif a > b:
-        return 'First is greater'
+    if a > b:
+        return "First is greater"
+    elif b > a:
+        return "Second is greater"
     else:
-        return 'Second is greater'
-
-
-number_compare(1, 1)
+        return "Numbers are equal"

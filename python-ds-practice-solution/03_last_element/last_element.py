@@ -8,9 +8,8 @@ def last_element(lst):
         True
     """
 
-    if bool(lst):
+    if lst:
         return lst[-1]
-    return None
 
-
-last_element([1, 2, 3])
+    # we don't need to do anything else; functions
+    # return None by default
