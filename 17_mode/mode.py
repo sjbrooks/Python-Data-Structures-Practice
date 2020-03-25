@@ -11,3 +11,17 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+
+    # import frequency counter (or make one here)
+
+    from collections import Counter
+
+    # invoke frequency counter with nums as argument
+
+    num_frequency_count = Counter(nums)
+
+    # find the key with the largest value 
+    # (https://kite.com/python/answers/how-to-find-the-max-value-in-a-dictionary-in-python)
+
+    mode = max(num_frequency_count, key=num_frequency_count.get)
+    return mode

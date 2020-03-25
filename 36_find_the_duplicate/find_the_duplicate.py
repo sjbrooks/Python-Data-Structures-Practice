@@ -13,3 +13,16 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+
+    visited = []
+
+    for num in nums:
+        if num in visited:
+            return num
+        visited.append(num)
+
+    return None
+
+# in the solution, they used a set to be more declarative
+# i.e., each number in set is unique, and they added each
+# number to the set using .add()

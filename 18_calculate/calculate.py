@@ -23,5 +23,21 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
 
     If a valid operation isn't provided, return None.
 
-        >>> calculate('foo', 2, 3) is None
+        >>> calculate('foo', 2, 3)
+        ValueError: Invalid Operation
     """
+
+    if operation == 'add':
+        answer = a + b
+    elif operation == 'subtract':
+        answer = a - b
+    elif operation == 'multiply':
+        answer = a * b
+    elif operation == 'divide':
+        answer = a / b
+    else:
+        raise ValueError("Invalid Operation")
+
+    if make_int:
+        answer = int(answer)
+    return f'{message} {answer}'

@@ -24,3 +24,24 @@ def truncate(phrase, n):
         >>> truncate("Woah", 3)
         '...'
     """
+
+    # if n < 3:
+    #     return 'Truncation must be at least 3 characters.'
+
+    # if len(phrase) <= n:
+    #     return phrase
+ 
+    # phrase = list(phrase)
+    # phrase = [letter for letter in enumerate(phrase, n)]
+    # return phrase.join('...')
+
+    if n < 3:
+        return "Truncation must be at least 3 characters."
+
+    if n > len(phrase) + 2:
+        return phrase
+
+    return phrase[:n - 3] + "..."
+
+    # forgot that you can do this with slicing (even works with strings)
+

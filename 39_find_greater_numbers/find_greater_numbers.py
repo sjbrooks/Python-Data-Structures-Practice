@@ -19,3 +19,15 @@ def find_greater_numbers(nums):
         >>> find_greater_numbers([])
         0
     """
+
+    count = 0
+
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[j] > nums[i]:
+                count += 1
+
+    return count
+
+    # this is what I was thinking of doing too, but I had been wondering
+    # if there was a way to do it without a nested loop

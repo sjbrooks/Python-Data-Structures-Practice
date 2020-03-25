@@ -11,3 +11,11 @@ def remove_every_other(lst):
         >>> lst
         [1, 2, 3, 4, 5]
     """
+
+    # defaults to start at the first element and end at the last
+    # returns every other element
+    return lst[::2]
+
+# Okay way
+    #
+    # return [val for i, val in enumerate(lst) if i % 2 == 0]
